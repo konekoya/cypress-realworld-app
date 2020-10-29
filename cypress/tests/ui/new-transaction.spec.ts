@@ -17,6 +17,8 @@ describe("New Transaction", function () {
     cy.server();
     cy.route("POST", "/transactions").as("createTransaction");
 
+    cy.createUser();
+
     cy.route("GET", "/users").as("allUsers");
     cy.route("GET", "/notifications").as("notifications");
     cy.route("GET", "/transactions/public").as("publicTransactions");
